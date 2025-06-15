@@ -1,0 +1,36 @@
+General requirements (functional, visual and technical):
+1. use of forms and their functionality - receiving and processing data
+2. saving to a data file - e.g., database dump, saving form data, saving uploaded files, etc.
+3. writing to a database (mysql)
+4. reading from the database
+5. updating and deleting from the database
+6. simple login system with email address verification
+7. use of sessions in the project, not artificial, just such that it would allow to realistically illustrate their functionality
+8. use of cookies - creation and real use of them
+9. handling images on the site (upload to the server)
+10. use of loops, conditional instructions, arrays, functions
+11. use of object-oriented programming - logical division into classes
+12. simple site management system (admin panel)
+13. different roles (not logged in, logged in, admin) + password reset
+14. hosting the site on a university server
+15.  using something advanced with PHP  - library, tool, design, theme
+
+Non-functional requirements:
+1. clear code - e.g. breakdown into files, classes, methods, use of loops instead of hardcoding
+2. no visible errors communicated by PHP
+3. the project “compiles” - No problems when handing over the project
+4. repository - commits, order, etc.
+
+
+Quiz service
+Quiz service allows you to solve a variety of quizzes and keep statistics for players. Quizzes are grouped thematically and are located in individual tabs.
+Quizzes can be of different types (guessing something from a picture + text box, single choice, multiple choice). The site offers additional functionality,
+such as quiz of the day, arcade (solving random quizzes, as long as they are solved without errors - after each quiz is displayed appropriate information),
+filling in the gaps. The site collects and is able to display statistics about users, their achievements, the number of quizzes solved, efficiency and similar
+information about the quizzes themselves. Users are able to create their profile with an avatar and additional information.
+Users have the option to export their achievements to a file. Administration has the ability to export data regarding the quiz.
+The site offers a wizard for creating quizzes. The site offers an administration panel. There are different account types:
+administrator (can do everything - add, delete, edit quizzes and bookmarks, export data and view logs),
+moderator (can add, delete, edit quizzes, can reset their password),
+user (can take quizzes, complete their profile and reset their password).
+Information about quizzes and users and any logs should be stored in a database, and images should be stored as files
