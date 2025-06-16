@@ -26,7 +26,7 @@ $stats = $stmt->fetch();
 // Prepare CSV content
 $filename = "user_stats_" . date("Ymd_His") . ".csv";
 header("Content-Type: text/csv");
-header("Content-Disposition: attachment; filename="$filename"");
+header("Content-Disposition: attachment; filename=$filename");
 
 $output = fopen("php://output", "w");
 

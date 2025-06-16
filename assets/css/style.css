@@ -169,3 +169,15 @@ button[type="submit"] {
         gap: 0.5rem;
     }
 }
+
+form select {
+    padding: 0.4rem;
+    background-color: #222;
+    color: #fff;
+    border: 1px solid #555;
+    border-radius: 4px;
+}
+form label {
+    font-weight: bold;
+    color: #ccc;
+}

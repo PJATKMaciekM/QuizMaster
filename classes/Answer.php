@@ -16,5 +16,16 @@ class Answer {
         $stmt->execute([$question_id]);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+    public function getAnswersByQuestionId($question_id) {
+        $stmt = $this->pdo->prepare("SELECT * FROM ANSWERS WHERE question_id = ?");
+        $stmt->execute([$question_id]);
+        return $stmt->fetchAll();
+    }
+
+    public function deleteAnswersByQuestionId($question_id) {
+        $stmt = $this->pdo->prepare("DELETE FROM ANSWERS WHERE question_id = ?");
+        return $stmt->execute([$question_id]);
+    }
+
 }
 ?>

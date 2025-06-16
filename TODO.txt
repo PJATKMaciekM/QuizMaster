@@ -1,6 +1,6 @@
-Change profile - main profile page shows the avatar, name and description + STATS?. Add 2 buttons for updating profile and exporting achievements
-Quizes - group quizes by theme. Add filtering more stuff (pictures, fill gaps)
-Fix data quiz export (generates too much stuff)
+Change profile - main profile page shows the avatar, name and description + STATS?. Add 2 buttons for updating profile and exporting achievements - ok
+Quizes - group quizes by theme. Add filtering more stuff (pictures, fill gaps) sorting and filtering done
+Fix data quiz export (generates too much stuff) - ok
 Add moderator?
 Allow admin to change users role and delete user
 Add logs?

@@ -6,9 +6,10 @@ class Question {
         $this->pdo = $pdo;
     }
 
-    public function addQuestion($quiz_id, $text, $type) {
-        $stmt = $this->pdo->prepare("INSERT INTO QUESTIONS (quiz_id, question_text, question_type) VALUES (?, ?, ?)");
-        return $stmt->execute([$quiz_id, $text, $type]);
+    public function addQuestion($quiz_id, $text) {
+        $stmt = $this->pdo->prepare("INSERT INTO QUESTIONS (quiz_id, question_text) VALUES (?, ?)");
+        $stmt->execute([$quiz_id, $text]);
+        return $this->pdo->lastInsertId();
     }
 
     public function getQuestionsByQuiz($quiz_id) {
@@ -16,5 +17,22 @@ class Question {
         $stmt->execute([$quiz_id]);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+    public function getQuestionById($question_id) {
+        $stmt = $this->pdo->prepare("SELECT * FROM QUESTIONS WHERE id = ?");
+        $stmt->execute([$question_id]);
+        return $stmt->fetch();
+    }
+
+    public function updateQuestionText($question_id, $text) {
+        $stmt = $this->pdo->prepare("UPDATE QUESTIONS SET question_text = ? WHERE id = ?");
+        return $stmt->execute([$text, $question_id]);
+    }
+
+    public function deleteQuestion($question_id) {
+        $stmt = $this->pdo->prepare("DELETE FROM QUESTIONS WHERE id = ?");
+        return $stmt->execute([$question_id]);
+    }
+
+
 }
 ?>
