@@ -1,6 +1,7 @@
 <?php
 require_once '../config/db.php';
 require_once '../includes/mailer.php';
+require_once '../includes/logger.php';
 /** @var PDO $pdo */
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -29,6 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     } else {
         $error = "No user found with that email.";
+        logMessage("User {$_SESSION['user_id']} attempted a password reset, but encountered an error", "WARNING");
     }
 }
 ?>

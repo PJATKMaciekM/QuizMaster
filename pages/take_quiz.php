@@ -1,19 +1,25 @@
 <?php
 require_once '../includes/init.php';
-
+require_once '../includes/logger.php';
+require_once '../includes/logger.php';
 /** @var PDO $pdo */
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+$user_id = $_SESSION['user_id'];
 $quiz = new Quiz($pdo);
 $questionModel = new Question($pdo);
 $answerModel = new Answer($pdo);
 
 if (!isset($_GET['quiz_id'])) {
+    logMessage("User {$_SESSION['user_id']} started a quiz without quiz_id", "ERROR");
     die("No quiz selected.");
 }
 
 $quiz_id = (int) $_GET['quiz_id'];
 $quizData = $quiz->getQuizById($quiz_id);
 $questions = $questionModel->getQuestionsByQuiz($quiz_id);
-
+logMessage("User {$_SESSION['user_id']} started quiz ID $quiz_id");
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $score = 0;
     $total = count($questions);
@@ -34,6 +40,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($correctIds == $submitted) {
             $score++;
         }
+    }
+
+    $stmt = $pdo->prepare("SELECT id FROM QUIZZES WHERE id = ?");
+    $stmt->execute([$quiz_id]);
+    if (!$stmt->fetch()) {
+        logMessage("User {$_SESSION['user_id']} started a quiz that doesn't exist", "ERROR");
+        die("Quiz does not exist.");
     }
 
     $stmt = $pdo->prepare("INSERT INTO RESULTS (user_id, quiz_id, score, date_taken) VALUES (?, ?, ?, NOW())");

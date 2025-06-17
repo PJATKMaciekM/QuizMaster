@@ -10,7 +10,7 @@ if (session_status() === PHP_SESSION_NONE) {
             <a href="/pages/quiz.php">Quizzes</a>
             <?php if (isset($_SESSION['user_id'])): ?>
                 <a href="/pages/profile.php">Profile</a>
-                <?php if ($_SESSION['role'] === 'admin'): ?>
+                <?php if ($_SESSION['role'] == 'admin' || $_SESSION['role'] == 'moderator'): ?>
                     <a href="/pages/admin/panel.php">Admin</a>
                 <?php endif; ?>
                 <a href="/pages/logout.php">Logout</a>

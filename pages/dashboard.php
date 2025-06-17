@@ -10,7 +10,7 @@ if (!isset($_SESSION['user_id'])) {
 }
 echo "<h1>Welcome to QuizMaster</h1>";
 echo "<p><a href='pages/quiz.php'>Take a Quiz</a></p>";
-if ($_SESSION['role'] == 'admin') {
+if ($_SESSION['role'] == 'admin' || $_SESSION['role'] == 'moderator') {
     echo "<p><a href='pages/admin/panel.php'>Admin Panel</a></p>";
 }
 ?>

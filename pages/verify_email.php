@@ -2,6 +2,7 @@
 <?php
 /** @var PDO $pdo */
 require_once '../config/db.php';
+require_once '../includes/logger.php';
 if (isset($_GET['token'])) {
     $token = $_GET['token'];
     $stmt = $pdo->prepare("SELECT * FROM USERS WHERE verify_token = ?");
@@ -13,6 +14,7 @@ if (isset($_GET['token'])) {
         $update->execute([$user['id']]);
         echo "✅ Your email has been verified. <a href='login.php'>Login now</a>";
     } else {
+        logMessage("User {$_SESSION['user_id']} attempted email verification with invalid token", "WARNING");
         echo "❌ Invalid or expired token.";
     }
 } else {

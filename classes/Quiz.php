@@ -56,9 +56,18 @@ class Quiz {
     }
 
     public function deleteQuiz($quizId) {
+        // delete answers
+        $this->pdo->prepare("DELETE FROM ANSWERS WHERE question_id IN (SELECT id FROM QUESTIONS WHERE quiz_id = ?)")->execute([$quizId]);
+        // delete questions
+        $this->pdo->prepare("DELETE FROM QUESTIONS WHERE quiz_id = ?")->execute([$quizId]);
+        // delete results
+        $this->pdo->prepare("DELETE FROM RESULTS WHERE quiz_id = ?")->execute([$quizId]);
+
+        // finally delete the quiz
         $stmt = $this->pdo->prepare("DELETE FROM QUIZZES WHERE id = ?");
         return $stmt->execute([$quizId]);
     }
+
 
     public function updateQuiz($quiz_id, $title, $category, $type, $difficulty) {
         $stmt = $this->pdo->prepare("UPDATE QUIZZES SET title = ?, category = ?, type = ?, difficulty = ? WHERE id = ?");

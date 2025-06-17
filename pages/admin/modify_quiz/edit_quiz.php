@@ -3,12 +3,13 @@
 require_once '../../../includes/session.php';
 require_once '../../../config/db.php';
 require_once '../../../classes/Quiz.php';
+require_once '../../../includes/logger.php';
 
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin' || !isset($_GET['quiz_id'])) {
+if (!isset($_SESSION['user_id']) || !in_array($_SESSION['role'], ['admin', 'moderator']) || !isset($_GET['quiz_id'])) {
     $url = 'http://localhost:8000';
     $url = $url . '/pages/login.php';
     echo "<script>window.location.href='$url';</script>";
@@ -33,9 +34,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $type = $_POST['type'];
 
     if ($quizObj->updateQuiz($quiz_id, $title, $category, $type, $difficulty)) {
+        logMessage("Quiz updated successfully by User {$_SESSION['user_id']}");
         $message = "Quiz updated successfully.";
         $quiz = $quizObj->getQuizById($quiz_id); // refresh data
     } else {
+        logMessage("Failed to update quiz", "ERROR");
         $message = "Failed to update quiz.";
     }
 }

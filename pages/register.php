@@ -4,6 +4,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     /** @var PDO $pdo */
     require_once '../config/db.php';
     require_once '../classes/User.php';
+    require_once '../includes/logger.php';
     $user = new User($pdo);
     $result = $user->register($_POST['name'], $_POST['email'], $_POST['password']);
 
@@ -13,6 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo "✅ Registered! Please check your email for a verification link.";
     } else {
         $error = "Something went wrong during registration.";
+        logMessage("User failed to register", "WARNING");
     }
 }
 ?>

@@ -3,9 +3,12 @@
 require_once '../../includes/session.php';
 require_once '../../config/db.php';
 require_once '../../classes/Quiz.php';
+require_once '../../includes/logger.php';
 
-if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
-    header("Location: ../pages/login.php");
+if (!isset($_SESSION['user_id']) || !in_array($_SESSION['role'], ['admin', 'moderator'])) {
+    $url = 'http://localhost:8000';
+    $url = $url . '/pages/login.php';
+    echo "<script>window.location.href='$url';</script>";
     exit;
 }
 $quizObj = new Quiz($pdo);
@@ -15,8 +18,10 @@ $message = "";
 if (isset($_GET['delete'])) {
     $quizId = (int) $_GET['delete'];
     if ($quizObj->deleteQuiz($quizId)) {
+        logMessage("Quiz deleted successfully by User {$_SESSION['user_id']}", "WARNING");
         $message = "Quiz deleted successfully.";
     } else {
+        logMessage("Failed to delete quiz", "ERROR");
         $message = "Failed to delete quiz.";
     }
 }

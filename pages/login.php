@@ -5,6 +5,7 @@ if (session_status() === PHP_SESSION_NONE) {
 /** @var PDO $pdo */
 require_once '../config/db.php';
 require_once '../classes/User.php';
+require_once '../includes/logger.php';
 $user = new User($pdo);
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -13,6 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($result === 'resent_verification') {
         $error = "Please verify your email. A new verification link has been sent.";
     } elseif ($result === false) {
+        logMessage("Invalid login attempt", "WARNING");
         $error = "Invalid email or password.";
     } else {
         $_SESSION['user_id'] = $result['id'];

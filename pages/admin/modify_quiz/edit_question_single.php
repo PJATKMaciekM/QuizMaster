@@ -9,7 +9,7 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin' || !isset($_GET['question_id'])) {
+if (!isset($_SESSION['user_id']) || !in_array($_SESSION['role'], ['admin', 'moderator']) || !isset($_GET['question_id'])) {
     $url = 'http://localhost:8000';
     $url = $url . '/pages/login.php';
     echo "<script>window.location.href='$url';</script>";
@@ -41,6 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $is_correct = in_array($i, $correct) ? 1 : 0;
         $answerObj->addAnswer($question_id, $answer, $is_correct);
     }
+
     $message = "Question updated successfully.";
 }
 ?>

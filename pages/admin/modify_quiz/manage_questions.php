@@ -3,8 +3,9 @@
 require_once '../../../includes/session.php';
 require_once '../../../config/db.php';
 require_once '../../../classes/Question.php';
+require_once '../../../includes/logger.php';
 
-if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin' || !isset($_GET['quiz_id'])) {
+if (!isset($_SESSION['user_id']) || !in_array($_SESSION['role'], ['admin', 'moderator']) || !isset($_GET['quiz_id'])) {
     $url = 'http://localhost:8000';
     $url = $url . '/pages/login.php';
     echo "<script>window.location.href='$url';</script>";

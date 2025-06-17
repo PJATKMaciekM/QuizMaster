@@ -8,7 +8,7 @@ $questionModel = new Question($pdo);
 $answerModel = new Answer($pdo);
 
 if (!isset($_GET['quiz_id']) || !isset($_SESSION['quiz_results'])) {
-    header("Location: dashboard.php");
+    header("Location: index.php");
     exit;
 }
 

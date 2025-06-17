@@ -7,7 +7,7 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 $message = "";
-if ($_SESSION['role'] !== 'admin') {
+if (!isset($_SESSION['user_id']) || !in_array($_SESSION['role'], ['admin', 'moderator'])) {
     header("Location: ../dashboard.php");
     exit;
 }
@@ -20,11 +20,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $quizId = $quiz->createQuiz($title, $category, $_SESSION['user_id'], $type, $difficulty);
     if ($quizId !== false) {
-        header("Location: add_questions_single.php?quiz_id=" . $quizId);
+        header("Location: modify_quiz/add_questions_single.php?quiz_id=" . $quizId);
         exit;
     } else {
+        logMessage("Failed to create quiz", "ERROR");
         $message = "Failed to create quiz.";
     }
+    logMessage("Quiz created by User {$_SESSION['user_id']}", "INFO");
 }
 ?>
 <?php include '../../includes/header.php'; ?>
