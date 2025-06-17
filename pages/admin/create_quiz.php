@@ -20,8 +20,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $quizId = $quiz->createQuiz($title, $category, $_SESSION['user_id'], $type, $difficulty);
     if ($quizId !== false) {
-        header("Location: modify_quiz/add_questions_single.php?quiz_id=" . $quizId);
-        exit;
+        if($type == 'single'){
+            header("Location: modify_quiz/add_questions_single.php?quiz_id=" . $quizId);
+            exit;
+        }else if($type == 'multiple'){
+            header("Location: modify_quiz/add_questions_mult.php?quiz_id=" . $quizId);
+            exit;
+        }
     } else {
         logMessage("Failed to create quiz", "ERROR");
         $message = "Failed to create quiz.";

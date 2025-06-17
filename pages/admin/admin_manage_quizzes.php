@@ -60,7 +60,12 @@ $quizzes = $quizObj->getAllQuizzes();
             <td><?php echo htmlspecialchars($quiz['created_by']); ?></td>
             <td>
                 <a href="modify_quiz/edit_quiz.php?quiz_id=<?php echo $quiz['id']; ?>">Edit</a> |
-                <a href="modify_quiz/manage_questions.php?quiz_id=<?php echo $quiz['id']; ?>">Manage Questions</a> |
+                <?php if ($quiz['type'] == 'multiple'): ?>
+                    <a href="modify_quiz/manage_questions_mult.php?quiz_id=<?php echo $quiz['id']; ?>">Manage Questions</a> |
+                <?php elseif ($quiz['type'] == 'single'): ?>
+                    <a href="modify_quiz/manage_questions.php?quiz_id=<?php echo $quiz['id']; ?>">Manage Questions</a> |
+                <?php endif; ?>
+
                 <a href="?delete=<?php echo $quiz['id']; ?>" onclick="return confirm('Are you sure you want to delete this quiz?');">Delete</a>
 
             </td>
