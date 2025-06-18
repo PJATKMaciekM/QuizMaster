@@ -26,6 +26,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }else if($type == 'multiple'){
             header("Location: modify_quiz/add_questions_mult.php?quiz_id=" . $quizId);
             exit;
+        }else if($type == 'image'){
+            header("Location: modify_quiz/add_questions_image.php?quiz_id=" . $quizId);
+            exit;
         }
     } else {
         logMessage("Failed to create quiz", "ERROR");
@@ -54,6 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <select name="type" required>
         <option value="single">Single Choice</option>
         <option value="multiple">Multiple Choice</option>
+        <option value="image">Picture Quiz</option>
     </select><br><br>
     <button type="submit">Create Quiz</button>
 </form>

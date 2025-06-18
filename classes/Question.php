@@ -12,6 +12,12 @@ class Question {
         return $this->pdo->lastInsertId();
     }
 
+    public function addQuestionImage($quiz_id, $text, $image_path) {
+        $stmt = $this->pdo->prepare("INSERT INTO QUESTIONS (quiz_id, question_text, image_path) VALUES (?, ?, ?)");
+        $stmt->execute([$quiz_id, $text, $image_path]);
+        return $this->pdo->lastInsertId();
+    }
+
     public function getQuestionsByQuiz($quiz_id) {
         $stmt = $this->pdo->prepare("SELECT * FROM QUESTIONS WHERE quiz_id = ?");
         $stmt->execute([$quiz_id]);

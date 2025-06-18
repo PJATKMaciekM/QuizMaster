@@ -80,5 +80,11 @@ class Quiz {
         return $result ? $result['id'] : null;
     }
 
+    public function getQuizByType($type) {
+        $stmt = $this->pdo->prepare("SELECT * FROM QUIZZES WHERE type = ?");
+        $stmt->execute([$type]);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
 }
 ?>

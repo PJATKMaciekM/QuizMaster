@@ -1,1 +1,1 @@
-SELECT arcade_record FROM users WHERE id = 2
+alter table questions add column image_path varchar(255)
