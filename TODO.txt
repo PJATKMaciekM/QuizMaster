@@ -1,4 +1,4 @@
-More stuff - fill gaps
 Cookies - dark mode preference/ remember me
 CSRF - optional
 Refactor
+Speed up

@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $answers = $_POST['answers'];
     $correct = $_POST['correct'];
 
-    $question_id = $questionModel->addQuestion($quiz_id, $question_text);
+    $question_id = $questionModel->addQuestion($quiz_id, $question_text, 'multiple');
     if ($question_id) {
         foreach ($answers as $i => $answer_text) {
             $is_correct = in_array($i, $correct) ? 1 : 0;

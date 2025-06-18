@@ -54,13 +54,17 @@ $filteredQuizzes = $quiz->getFilteredQuizzes($difficulty, $category);
         <?php foreach ($filteredQuizzes as $q): ?>
             <li>
                 <?php if ($q['type'] === 'image'): ?>
-                <a href="quizes/pictures.php?quiz_id=<?= $q['id'] ?>">
-                    <?= htmlspecialchars($q['title']) ?> (<?= ucfirst($q['difficulty']) ?> | <?= htmlspecialchars($q['category']) ?>)
-                </a>
+                    <a href="quizes/pictures.php?quiz_id=<?= $q['id'] ?>">
+                        <?= htmlspecialchars($q['title']) ?> (<?= ucfirst($q['difficulty']) ?> | <?= htmlspecialchars($q['category']) ?>)
+                    </a>
+                <?php elseif ($q['type'] === 'text'): ?>
+                    <a href="quizes/text_quiz.php?quiz_id=<?= $q['id'] ?>">
+                        <?= htmlspecialchars($q['title']) ?> (<?= ucfirst($q['difficulty']) ?> | <?= htmlspecialchars($q['category']) ?>)
+                    </a>
                 <?php else: ?>
-                <a href="take_quiz.php?quiz_id=<?= $q['id'] ?>">
-                    <?= htmlspecialchars($q['title']) ?> (<?= ucfirst($q['difficulty']) ?> | <?= htmlspecialchars($q['category']) ?>)
-                </a>
+                    <a href="take_quiz.php?quiz_id=<?= $q['id'] ?>">
+                        <?= htmlspecialchars($q['title']) ?> (<?= ucfirst($q['difficulty']) ?> | <?= htmlspecialchars($q['category']) ?>)
+                    </a>
                 <?php endif; ?>
             </li>
         <?php endforeach; ?>

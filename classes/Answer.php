@@ -14,7 +14,7 @@ class Answer {
     public function getAnswersByQuestion($question_id) {
         $stmt = $this->pdo->prepare("SELECT * FROM ANSWERS WHERE question_id = ?");
         $stmt->execute([$question_id]);
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC) ?:[];
     }
     public function getAnswersByQuestionId($question_id) {
         $stmt = $this->pdo->prepare("SELECT * FROM ANSWERS WHERE question_id = ?");
@@ -33,5 +33,10 @@ class Answer {
         return $stmt->fetchAll(PDO::FETCH_COLUMN);
     }
 
+    public function getCorrectAnswerTextByQuestionId($questionId) {
+        $stmt = $this->pdo->prepare("SELECT answer_text FROM ANSWERS WHERE question_id = ? AND is_correct = 1");
+        $stmt->execute([$questionId]);
+        return $stmt->fetchAll(PDO::FETCH_COLUMN);
+    }
 }
 ?>

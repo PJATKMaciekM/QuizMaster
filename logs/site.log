@@ -134,3 +134,88 @@
 [2025-06-18 15:09:22][INFO] User 2 scored 1 in image quiz 14
 [2025-06-18 15:23:46][INFO] User 2 completed image quiz 14 with score 1/1
 [2025-06-18 15:27:24][INFO] User 2 completed image quiz 14 with score 1/1
+[2025-06-18 18:38:27][INFO] User 2 added fill-blank question to quiz ID 16
+[2025-06-18 18:38:54][INFO] User 2 started quiz ID 16
+[2025-06-18 18:38:58][INFO] User 2 started quiz ID 16
+[2025-06-18 18:50:27][INFO] User 2 completed fill-blank quiz 16 with score 0/1
+[2025-06-18 18:54:21][INFO] User 2 completed fill-blank quiz 16 with score 0/1
+[2025-06-18 18:56:06][INFO] User 2 completed fill-blank quiz 16 with score 0/1
+[2025-06-18 18:58:17][INFO] User 2 completed fill-blank quiz 16 with score 0/1
+[2025-06-18 19:01:55][INFO] User 2 completed fill-blank quiz 16 with score 1/1
+[2025-06-18 19:03:52][INFO] User 2 completed fill-blank quiz 16 with score 1/1
+[2025-06-18 19:06:04][INFO] User 2 completed fill-blank quiz 16 with score 1/1
+[2025-06-18 19:19:53][INFO] User 2 completed fill-blank quiz 16 with score 1/1
+[2025-06-18 19:23:10][INFO] User 2 added fill-blank question to quiz ID 17
+[2025-06-18 19:23:38][INFO] User 2 added fill-blank question to quiz ID 17
+[2025-06-18 19:23:50][INFO] User 2 completed fill-blank quiz 17 with score 2/2
+[2025-06-18 19:24:51][INFO] Question added successfully by User 2
+[2025-06-18 19:37:43][INFO] User 2 passed quiz 1 in arcade mode
+[2025-06-18 19:37:51][INFO] User 2 passed quiz 10 in arcade mode
+[2025-06-18 19:37:55][INFO] User 2 passed quiz 16 in arcade mode
+[2025-06-18 19:38:00][INFO] User 2 passed quiz 1 in arcade mode
+[2025-06-18 19:38:03][INFO] User 2 failed arcade on quiz 17 after score 4
+[2025-06-18 19:41:37][INFO] User 2 passed quiz 1 in arcade mode
+[2025-06-18 19:41:41][INFO] User 2 passed quiz 10 in arcade mode
+[2025-06-18 19:42:17][INFO] User 2 passed quiz 10 in arcade mode
+[2025-06-18 19:42:19][INFO] User 2 passed quiz 16 in arcade mode
+[2025-06-18 19:42:21][INFO] User 2 failed arcade on quiz 17 after score 4
+[2025-06-18 19:42:24][INFO] User 2 failed arcade on quiz 17 after score 0
+[2025-06-18 19:42:28][INFO] User 2 passed quiz 16 in arcade mode
+[2025-06-18 19:42:31][INFO] User 2 passed quiz 16 in arcade mode
+[2025-06-18 19:46:20][INFO] User 2 passed quiz 2 in arcade mode
+[2025-06-18 19:46:27][INFO] User 2 passed quiz 16 in arcade mode
+[2025-06-18 19:46:33][INFO] User 2 passed quiz 14 in arcade mode
+[2025-06-18 19:46:36][INFO] User 2 passed quiz 10 in arcade mode
+[2025-06-18 19:46:43][INFO] User 2 passed quiz 2 in arcade mode
+[2025-06-18 19:46:46][INFO] User 2 passed quiz 1 in arcade mode
+[2025-06-18 19:46:50][INFO] User 2 passed quiz 3 in arcade mode
+[2025-06-18 20:01:39][INFO] User 2 passed quiz 10 in arcade mode
+[2025-06-18 20:01:44][INFO] User 2 set new arcade record: 10
+[2025-06-18 20:01:44][INFO] User 2 failed arcade on quiz 2 after score 10
+[2025-06-18 20:01:50][INFO] User 2 passed quiz 3 in arcade mode
+[2025-06-18 20:01:54][INFO] User 2 passed quiz 10 in arcade mode
+[2025-06-18 20:01:59][INFO] User 2 passed quiz 14 in arcade mode
+[2025-06-18 20:03:09][INFO] User 2 passed quiz 1 in arcade mode
+[2025-06-18 20:03:13][INFO] User 2 passed quiz 2 in arcade mode
+[2025-06-18 20:03:17][INFO] User 2 passed quiz 10 in arcade mode
+[2025-06-18 20:03:24][INFO] User 2 passed quiz 14 in arcade mode
+[2025-06-18 20:03:31][INFO] User 2 failed arcade on quiz 17 after score 7
+[2025-06-18 20:03:39][INFO] User 2 passed quiz 3 in arcade mode
+[2025-06-18 20:03:41][INFO] User 2 passed quiz 14 in arcade mode
+[2025-06-18 20:03:48][INFO] User 2 passed quiz 14 in arcade mode
+[2025-06-18 20:03:53][INFO] User 2 passed quiz 10 in arcade mode
+[2025-06-18 20:08:36][INFO] User 2 passed quiz 2 in arcade mode
+[2025-06-18 20:08:40][INFO] User 2 passed quiz 16 in arcade mode
+[2025-06-18 20:08:42][INFO] User 2 passed quiz 14 in arcade mode
+[2025-06-18 20:10:05][INFO] Arcade input: very
+[2025-06-18 20:10:05][INFO] Expected answers: very
+[2025-06-18 20:10:05][INFO] Arcade input: hard
+[2025-06-18 20:10:05][INFO] Expected answers: hard
+[2025-06-18 20:10:05][INFO] User 2 passed quiz 17 in arcade mode
+[2025-06-18 20:10:25][INFO] User 2 passed quiz 14 in arcade mode
+[2025-06-18 20:10:30][INFO] User 2 passed quiz 14 in arcade mode
+[2025-06-18 20:10:32][INFO] User 2 passed quiz 14 in arcade mode
+[2025-06-18 20:10:34][INFO] User 2 passed quiz 14 in arcade mode
+[2025-06-18 20:10:38][INFO] Arcade input: HTML
+[2025-06-18 20:10:38][INFO] Expected answers: HTML
+[2025-06-18 20:10:38][INFO] User 2 passed quiz 16 in arcade mode
+[2025-06-18 20:10:43][INFO] User 2 passed quiz 2 in arcade mode
+[2025-06-18 20:10:45][INFO] User 2 passed quiz 14 in arcade mode
+[2025-06-18 20:10:50][INFO] User 2 passed quiz 2 in arcade mode
+[2025-06-18 20:10:54][INFO] User 2 passed quiz 3 in arcade mode
+[2025-06-18 20:10:57][INFO] User 2 passed quiz 10 in arcade mode
+[2025-06-18 20:11:00][INFO] User 2 passed quiz 10 in arcade mode
+[2025-06-18 20:11:03][INFO] User 2 passed quiz 3 in arcade mode
+[2025-06-18 20:11:11][INFO] Arcade input: very
+[2025-06-18 20:11:11][INFO] Expected answers: very
+[2025-06-18 20:11:11][INFO] Arcade input: hard
+[2025-06-18 20:11:11][INFO] Expected answers: hard
+[2025-06-18 20:11:11][INFO] User 2 passed quiz 17 in arcade mode
+[2025-06-18 20:11:15][INFO] Arcade input: HTML
+[2025-06-18 20:11:15][INFO] Expected answers: HTML
+[2025-06-18 20:11:15][INFO] User 2 passed quiz 16 in arcade mode
+[2025-06-18 20:11:21][INFO] User 2 passed quiz 2 in arcade mode
+[2025-06-18 20:50:12][INFO] User 3 started quiz ID 1
+[2025-06-18 20:50:15][INFO] User 3 started quiz ID 1
+[2025-06-18 21:08:55][INFO] User 2 started quiz ID 1
+[2025-06-18 21:08:59][INFO] User 2 started quiz ID 1

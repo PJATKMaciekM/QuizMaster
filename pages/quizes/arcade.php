@@ -30,22 +30,31 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['quiz_id'])) {
 
     foreach ($questions as $q) {
         $qid = $q['id'];
-        $correctAnswers = $answerObj->getCorrectAnswersByQuestionId($qid);
-        $submitted = $_POST['answers'][$qid] ?? [];
-        if (!is_array($submitted)) {
-            $submitted = [$submitted];
+        if($q['question_type'] === 'text'){
+            $correctAnswers = (array)$answerObj->getCorrectAnswerTextByQuestionId($qid);
+            $userInput = trim($_POST['answers'][$qid] ?? '');
+            $userAnswers[$qid] = $userInput;
+            if (!(in_array(strtolower($userInput), array_map('strtolower', $correctAnswers)))) {
+                $all_correct = false;
+                break;
+            }
+        }else{
+            $correctAnswers = $answerObj->getCorrectAnswersByQuestionId($qid);
+            $submitted = $_POST['answers'][$qid] ?? [];
+            if (!is_array($submitted)) {
+                $submitted = [$submitted];
+            }
+            $submitted = array_map('intval', $submitted);
+            $correctAnswers = array_map('intval', $answerObj->getCorrectAnswersByQuestionId($qid));
+
+            sort($submitted);
+            sort($correctAnswers);
+
+            if ($submitted != $correctAnswers) {
+                $all_correct = false;
+                break;
+            }
         }
-        $submitted = array_map('intval', $submitted);
-        $correctAnswers = array_map('intval', $answerObj->getCorrectAnswersByQuestionId($qid));
-
-        sort($submitted);
-        sort($correctAnswers);
-
-        if ($submitted != $correctAnswers) {
-            $all_correct = false;
-            break;
-        }
-
     }
 
     if ($all_correct) {
@@ -107,21 +116,33 @@ $questions = $questionObj->getQuestionsByQuiz($quiz_id);
     <h3><?= htmlspecialchars($quiz['title']) ?></h3>
 
     <?php foreach ($questions as $q): ?>
-        <div>
-            <p><strong><?= htmlspecialchars($q['question_text']) ?></strong></p>
+        <div style="margin-bottom: 2rem; padding: 1rem; background: #2a2a2a; border-radius: 6px;">
+            <?php if (!empty($q['image_path'])): ?>
+                <img src="../../assets/uploads/<?= htmlspecialchars($q['image_path']) ?>" alt="Question Image"
+                     style="max-width: 100%; height: auto; border: 1px solid #444; margin-bottom: 1rem;">
+            <?php endif; ?>
+
             <?php
+            $type = $q['question_type'];
             $answers = $answerObj->getAnswersByQuestionId($q['id']);
-            $type = $quiz['type'];
+            $questionText = htmlspecialchars($q['question_text']);
             ?>
-            <?php foreach ($answers as $ans): ?>
-                <label>
-                    <input
-                        type="<?= ($type === 'multiple') ? 'checkbox' : 'radio' ?>"
-                        name="answers[<?= $q['id'] ?>]<?= ($type === 'multiple') ? '[]' : '' ?>"
-                        value="<?= $ans['id'] ?>">
-                    <?= htmlspecialchars($ans['answer_text']) ?>
-                </label><br>
-            <?php endforeach; ?>
+
+            <?php if ($type === 'text'): ?>
+                <p><?= str_replace('___', '<u style="color:#ccc;">__________</u>', $questionText) ?></p>
+                <input type="text" name="answers[<?= $q['id'] ?>]" required>
+            <?php else: ?>
+                <p><strong><?= $questionText ?></strong></p>
+                <?php foreach ($answers as $ans): ?>
+                    <label>
+                        <input
+                                type="<?= ($type === 'multiple') ? 'checkbox' : 'radio' ?>"
+                                name="answers[<?= $q['id'] ?>]<?= ($type === 'multiple') ? '[]' : '' ?>"
+                                value="<?= $ans['id'] ?>">
+                        <?= htmlspecialchars($ans['answer_text']) ?>
+                    </label><br>
+                <?php endforeach; ?>
+            <?php endif; ?>
         </div>
     <?php endforeach; ?>
 
@@ -129,3 +150,4 @@ $questions = $questionObj->getQuestionsByQuiz($quiz_id);
 </form>
 
 <?php include '../../includes/footer.php'; ?>
+

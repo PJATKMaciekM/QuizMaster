@@ -36,23 +36,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $targetFile = $targetDir . $imageName;
     move_uploaded_file($image["tmp_name"], $targetFile);
 
-    // Insert question
-    //$stmt = $pdo->prepare("INSERT INTO QUESTIONS (quiz_id, question_text, image_path) VALUES (?, ?, ?)");
-    //$stmt->execute([$quiz_id, $question_text, $imageName]);
-    //$question_id = $pdo->lastInsertId();
-    $question_id = $questionModel->addQuestionImage($quiz_id,$question_text,$imageName);
+    $question_id = $questionModel->addQuestionImage($quiz_id,$question_text, 'image', $imageName);
     if($question_id){
         foreach ($answers as $i => $answer_text) {
             $is_correct = in_array($i, $correct)? 1 : 0;
             $answerModel->addAnswer($question_id, $answer_text, $is_correct);
         }
     }
-    // Insert answers
-//    foreach ($answers as $i => $answer) {
-//        $is_correct = ($i == $correct_answer) ? 1 : 0;
-//        $stmt = $pdo->prepare("INSERT INTO ANSWERS (question_id, answer_text, is_correct) VALUES (?, ?, ?)");
-//        $stmt->execute([$question_id, $answer, $is_correct]);
-//    }
 
     $message = "Image-based question added!";
     logMessage("User {$_SESSION['user_id']} added image quiz question to quiz ID $quiz_id", "INFO");

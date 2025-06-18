@@ -17,13 +17,21 @@ $user = $userObj->getUserById($_SESSION['user_id']);
 $avatar = $user['avatar'] ? "/../assets/uploads/" . $user['avatar'] : "/../assets/uploads/default_avatar.png";
 
 // Fetch statistics
-$stmt = $pdo->prepare("SELECT COUNT(*) as total, 
-    SUM(score) as total_score, 
-    SUM(score) / (COUNT(*) * 1.0) * 100 as accuracy 
-    FROM RESULTS WHERE user_id = ?");
+$stmt = $pdo->prepare("
+    SELECT 
+        SUM(score) AS total_score, 
+        SUM(total_questions) AS total_possible,
+        (SUM(score) / SUM(total_questions)) * 100 AS accuracy
+    FROM RESULTS 
+    WHERE user_id = ?
+");
 $stmt->execute([$_SESSION['user_id']]);
 $stats = $stmt->fetch();
 $created_at = date("F j, Y", strtotime($user['created_at']));
+
+$stmt = $pdo->prepare("SELECT COUNT(*) FROM results WHERE user_id = ?");
+$stmt->execute([$_SESSION['user_id']]);
+$total =  $stmt->fetchColumn();
 ?>
 
 <?php include '../../includes/header.php'; ?>
@@ -37,7 +45,7 @@ $created_at = date("F j, Y", strtotime($user['created_at']));
 
 <h3>📊 Stats</h3>
 <ul>
-    <li>Completed Quizzes: <strong><?php echo $stats['total'] ?? 0; ?></strong></li>
+    <li>Completed Quizzes: <strong><?php echo $total ?? 0; ?></strong></li>
     <li>Accuracy: <strong><?php echo round($stats['accuracy'] ?? 0, 2); ?>%</strong></li>
     <li>Arcade Record: <strong><?php echo $user['arcade_record']; ?></strong></li>
     <li>Account Created: <strong><?php echo $created_at; ?></strong></li>

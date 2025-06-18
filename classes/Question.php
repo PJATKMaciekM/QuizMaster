@@ -6,15 +6,15 @@ class Question {
         $this->pdo = $pdo;
     }
 
-    public function addQuestion($quiz_id, $text) {
-        $stmt = $this->pdo->prepare("INSERT INTO QUESTIONS (quiz_id, question_text) VALUES (?, ?)");
-        $stmt->execute([$quiz_id, $text]);
+    public function addQuestion($quiz_id, $text, $type) {
+        $stmt = $this->pdo->prepare("INSERT INTO QUESTIONS (quiz_id, question_text, question_type) VALUES (?, ?, ?)");
+        $stmt->execute([$quiz_id, $text, $type]);
         return $this->pdo->lastInsertId();
     }
 
-    public function addQuestionImage($quiz_id, $text, $image_path) {
-        $stmt = $this->pdo->prepare("INSERT INTO QUESTIONS (quiz_id, question_text, image_path) VALUES (?, ?, ?)");
-        $stmt->execute([$quiz_id, $text, $image_path]);
+    public function addQuestionImage($quiz_id, $text, $type,$image_path) {
+        $stmt = $this->pdo->prepare("INSERT INTO QUESTIONS (quiz_id, question_text, question_type, image_path) VALUES (?, ?, ?, ?)");
+        $stmt->execute([$quiz_id, $text, $type, $image_path]);
         return $this->pdo->lastInsertId();
     }
 

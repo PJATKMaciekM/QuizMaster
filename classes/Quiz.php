@@ -86,5 +86,10 @@ class Quiz {
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    public function getRandomQuizIdByType($type) {
+        $quiz_arr = $this->getQuizByType($type);
+        $rand = rand(0, sizeof($quiz_arr)-1);
+        return $quiz_arr[$rand]['id'];
+    }
 }
 ?>

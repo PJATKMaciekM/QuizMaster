@@ -48,8 +48,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         die("Quiz does not exist.");
     }
 
-    $stmt = $pdo->prepare("INSERT INTO RESULTS (user_id, quiz_id, score, date_taken) VALUES (?, ?, ?, NOW())");
-    $stmt->execute([$_SESSION['user_id'], $quiz_id, $score]);
+    $stmt = $pdo->prepare("INSERT INTO RESULTS (user_id, quiz_id, score, total_questions,date_taken) VALUES (?, ?, ?, ?, NOW())");
+    $stmt->execute([$_SESSION['user_id'], $quiz_id, $score, count($questions)]);
 
     $_SESSION['quiz_results'] = $_POST['answer'];
     $_SESSION['quiz_score'] = $score;

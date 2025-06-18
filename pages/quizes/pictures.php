@@ -44,8 +44,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 
-    $stmt = $pdo->prepare("INSERT INTO RESULTS (user_id, quiz_id, score, date_taken) VALUES (?, ?, ?, NOW())");
-    $stmt->execute([$_SESSION['user_id'], $quiz_id, $score]);
+    $stmt = $pdo->prepare("INSERT INTO RESULTS (user_id, quiz_id, score, total_questions,date_taken) VALUES (?, ?, ?, ?, NOW())");
+    $stmt->execute([$_SESSION['user_id'], $quiz_id, $score, count($questions)]);
 
     logMessage("User {$_SESSION['user_id']} completed image quiz $quiz_id with score $score/" . count($questions), "INFO");
 }
