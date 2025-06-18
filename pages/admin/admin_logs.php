@@ -2,7 +2,7 @@
 require_once '../../includes/session.php';
 
 if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
-    header("Location: ../pages/login.php");
+    header("Location: ../pages/accounts/login.php");
     exit;
 }
 

@@ -1,10 +1,10 @@
-<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../../assets/css/style.css">
 <?php
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     /** @var PDO $pdo */
-    require_once '../config/db.php';
-    require_once '../classes/User.php';
-    require_once '../includes/logger.php';
+    require_once '../../config/db.php';
+    require_once '../../classes/User.php';
+    require_once '../../includes/logger.php';
     $user = new User($pdo);
     $result = $user->register($_POST['name'], $_POST['email'], $_POST['password']);
 
@@ -25,4 +25,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     Password: <input type="password" name="password" required>
     <button type="submit">Register</button>
 </form>
-<?php include '../includes/footer.php'; ?>
+<?php include '../../includes/footer.php'; ?>

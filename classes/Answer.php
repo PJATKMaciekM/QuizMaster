@@ -27,5 +27,11 @@ class Answer {
         return $stmt->execute([$question_id]);
     }
 
+    public function getCorrectAnswersByQuestionId($questionId) {
+        $stmt = $this->pdo->prepare("SELECT id FROM ANSWERS WHERE question_id = ? AND is_correct = 1");
+        $stmt->execute([$questionId]);
+        return $stmt->fetchAll(PDO::FETCH_COLUMN);
+    }
+
 }
 ?>

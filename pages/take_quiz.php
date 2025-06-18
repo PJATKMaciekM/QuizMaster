@@ -1,7 +1,6 @@
 <?php
 require_once '../includes/init.php';
 require_once '../includes/logger.php';
-require_once '../includes/logger.php';
 /** @var PDO $pdo */
 if (session_status() === PHP_SESSION_NONE) {
     session_start();

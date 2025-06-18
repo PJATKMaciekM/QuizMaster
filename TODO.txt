@@ -1,5 +1,4 @@
-Fix multi choice quizes - DONE
-Add arena - Quiz of the day, arcade etc. - More stuff (pictures, fill gaps)
+More stuff (pictures, fill gaps)
 Cookies - dark mode preference/ remember me
 CSRF - optional
 Refactor

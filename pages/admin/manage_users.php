@@ -5,7 +5,7 @@ require_once '../../config/db.php';
 require_once '../../includes/logger.php';
 
 if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
-    header("Location: login.php");
+    header("Location: ../accounts/login.php");
     exit;
 }
 

@@ -74,5 +74,11 @@ class Quiz {
         return $stmt->execute([$title, $category, $type, $difficulty, $quiz_id]);
     }
 
+    public function getRandomQuizId() {
+        $stmt = $this->pdo->query("SELECT id FROM QUIZZES ORDER BY RAND() LIMIT 1");
+        $result = $stmt->fetch();
+        return $result ? $result['id'] : null;
+    }
+
 }
 ?>

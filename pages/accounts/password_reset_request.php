@@ -1,7 +1,7 @@
 <?php
-require_once '../config/db.php';
-require_once '../includes/mailer.php';
-require_once '../includes/logger.php';
+require_once '../../config/db.php';
+require_once '../../includes/mailer.php';
+require_once '../../includes/logger.php';
 /** @var PDO $pdo */
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $user = $stmt->fetch();
 
     if ($user) {
-        require_once __DIR__ . '/../includes/mailer.php';
+        require_once __DIR__ . '/../../includes/mailer.php';
         // Generate token and expiry
         $token = bin2hex(random_bytes(32));
         $expires = date("Y-m-d H:i:s", time() + 3600); // valid for 1 hour
@@ -35,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 
-<?php include '../includes/header.php'; ?>
+<?php include '../../includes/header.php'; ?>
 
 <h2>Password Reset Request</h2>
 
@@ -52,4 +52,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <p><a href="login.php">Back to login</a></p>
 
-<?php include '../includes/footer.php'; ?>
+<?php include '../../includes/footer.php'; ?>

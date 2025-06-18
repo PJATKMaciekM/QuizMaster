@@ -1,8 +1,8 @@
-<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../../assets/css/style.css">
 <?php
 /** @var PDO $pdo */
-require_once '../config/db.php';
-require_once '../classes/User.php';
+require_once '../../config/db.php';
+require_once '../../classes/User.php';
 
 if (isset($_GET['token'])) {
     $token = $_GET['token'];
@@ -23,9 +23,9 @@ if (isset($_GET['token'])) {
     exit;
 }
 ?>
-<?php include '../includes/header.php'; ?>
+<?php include '../../includes/header.php'; ?>
 <form method="POST">
     New Password: <input type="password" name="password" required>
     <button type="submit">Reset Password</button>
 </form>
-<?php include '../includes/footer.php'; ?>
+<?php include '../../includes/footer.php'; ?>

@@ -1,8 +1,8 @@
-<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../../assets/css/style.css">
 <?php
 /** @var PDO $pdo */
-require_once '../config/db.php';
-require_once '../includes/logger.php';
+require_once '../../config/db.php';
+require_once '../../includes/logger.php';
 if (isset($_GET['token'])) {
     $token = $_GET['token'];
     $stmt = $pdo->prepare("SELECT * FROM USERS WHERE verify_token = ?");

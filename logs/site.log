@@ -18,3 +18,107 @@
 [2025-06-17 22:34:22][WARNING] Invalid login attempt
 [2025-06-17 22:59:14][WARNING] Quiz deleted successfully by User 3
 [2025-06-17 23:00:22][WARNING] Admin deleted user ID 4
+[2025-06-18 02:49:22][INFO] User 2 started quiz ID 1
+[2025-06-18 02:49:48][INFO] User 2 started quiz ID 3
+[2025-06-18 02:52:35][INFO] User 2 started quiz ID 3
+[2025-06-18 02:52:38][INFO] User 2 started quiz ID 1
+[2025-06-18 03:03:00][INFO] User 2 failed arcade on quiz 10 after score 0
+[2025-06-18 03:03:15][INFO] User 2 failed arcade on quiz 1 after score 0
+[2025-06-18 03:03:34][INFO] User 2 failed arcade on quiz 3 after score 0
+[2025-06-18 03:04:34][INFO] User 2 failed arcade on quiz 2 after score 0
+[2025-06-18 03:10:08][INFO] User 2 failed arcade on quiz 3 after score 0
+[2025-06-18 03:10:33][INFO] User 2 failed arcade on quiz 3 after score 0
+[2025-06-18 03:10:44][INFO] User 2 failed arcade on quiz 3 after score 0
+[2025-06-18 03:10:48][INFO] User 2 failed arcade on quiz 1 after score 0
+[2025-06-18 03:15:00][INFO] Checking Q3 — Submitted: [9,10] vs Correct: [9,10,12]
+[2025-06-18 03:15:00][INFO] User 2 failed arcade on quiz 2 after score 0
+[2025-06-18 03:16:29][INFO] Checking Q1 — Submitted: [1] vs Correct: [1]
+[2025-06-18 03:16:29][INFO] Checking Q2 — Submitted: [7] vs Correct: [7]
+[2025-06-18 03:16:29][INFO] User 2 passed quiz 1 in arcade mode
+[2025-06-18 03:16:47][INFO] Checking Q3 — Submitted: [9,10,12] vs Correct: [9,10,12]
+[2025-06-18 03:16:47][INFO] Checking Q4 — Submitted: [14,16] vs Correct: [14,16]
+[2025-06-18 03:16:47][INFO] User 2 passed quiz 2 in arcade mode
+[2025-06-18 03:16:52][INFO] Checking Q11 — Submitted: [51] vs Correct: [51]
+[2025-06-18 03:16:52][INFO] User 2 passed quiz 10 in arcade mode
+[2025-06-18 03:17:01][INFO] Checking Q3 — Submitted: [9,11,12] vs Correct: [9,10,12]
+[2025-06-18 03:17:01][INFO] User 2 failed arcade on quiz 2 after score 3
+[2025-06-18 03:17:24][INFO] Checking Q5 — Submitted: [18] vs Correct: [18]
+[2025-06-18 03:17:24][INFO] Checking Q6 — Submitted: [23] vs Correct: [23]
+[2025-06-18 03:17:24][INFO] User 2 passed quiz 3 in arcade mode
+[2025-06-18 03:17:29][INFO] Checking Q11 — Submitted: [51] vs Correct: [51]
+[2025-06-18 03:17:29][INFO] User 2 passed quiz 10 in arcade mode
+[2025-06-18 03:17:32][INFO] Checking Q11 — Submitted: [51] vs Correct: [51]
+[2025-06-18 03:17:32][INFO] User 2 passed quiz 10 in arcade mode
+[2025-06-18 03:17:36][INFO] Checking Q1 — Submitted: [1] vs Correct: [1]
+[2025-06-18 03:17:36][INFO] Checking Q2 — Submitted: [7] vs Correct: [7]
+[2025-06-18 03:17:36][INFO] User 2 passed quiz 1 in arcade mode
+[2025-06-18 03:17:44][INFO] Checking Q1 — Submitted: [1] vs Correct: [1]
+[2025-06-18 03:17:44][INFO] Checking Q2 — Submitted: [7] vs Correct: [7]
+[2025-06-18 03:17:44][INFO] User 2 passed quiz 1 in arcade mode
+[2025-06-18 03:17:48][INFO] Checking Q5 — Submitted: [18] vs Correct: [18]
+[2025-06-18 03:17:48][INFO] Checking Q6 — Submitted: [23] vs Correct: [23]
+[2025-06-18 03:17:48][INFO] User 2 passed quiz 3 in arcade mode
+[2025-06-18 03:17:54][INFO] Checking Q1 — Submitted: [1] vs Correct: [1]
+[2025-06-18 03:17:54][INFO] Checking Q2 — Submitted: [7] vs Correct: [7]
+[2025-06-18 03:17:54][INFO] User 2 passed quiz 1 in arcade mode
+[2025-06-18 03:17:57][INFO] Checking Q5 — Submitted: [18] vs Correct: [18]
+[2025-06-18 03:17:57][INFO] Checking Q6 — Submitted: [23] vs Correct: [23]
+[2025-06-18 03:17:57][INFO] User 2 passed quiz 3 in arcade mode
+[2025-06-18 03:18:01][INFO] Checking Q5 — Submitted: [18] vs Correct: [18]
+[2025-06-18 03:18:01][INFO] Checking Q6 — Submitted: [23] vs Correct: [23]
+[2025-06-18 03:18:01][INFO] User 2 passed quiz 3 in arcade mode
+[2025-06-18 03:18:04][INFO] Checking Q11 — Submitted: [51] vs Correct: [51]
+[2025-06-18 03:18:04][INFO] User 2 passed quiz 10 in arcade mode
+[2025-06-18 03:18:10][INFO] Checking Q3 — Submitted: [9,10,12] vs Correct: [9,10,12]
+[2025-06-18 03:18:10][INFO] Checking Q4 — Submitted: [14,16] vs Correct: [14,16]
+[2025-06-18 03:18:10][INFO] User 2 passed quiz 2 in arcade mode
+[2025-06-18 03:18:12][INFO] Checking Q11 — Submitted: [51] vs Correct: [51]
+[2025-06-18 03:18:12][INFO] User 2 passed quiz 10 in arcade mode
+[2025-06-18 03:18:15][INFO] Checking Q11 — Submitted: [51] vs Correct: [51]
+[2025-06-18 03:18:15][INFO] User 2 passed quiz 10 in arcade mode
+[2025-06-18 03:18:23][INFO] Checking Q3 — Submitted: [9,10,12] vs Correct: [9,10,12]
+[2025-06-18 03:18:23][INFO] Checking Q4 — Submitted: [14,16] vs Correct: [14,16]
+[2025-06-18 03:18:23][INFO] User 2 passed quiz 2 in arcade mode
+[2025-06-18 03:18:30][INFO] Checking Q3 — Submitted: [9,10,12] vs Correct: [9,10,12]
+[2025-06-18 03:18:30][INFO] Checking Q4 — Submitted: [14,16] vs Correct: [14,16]
+[2025-06-18 03:18:30][INFO] User 2 passed quiz 2 in arcade mode
+[2025-06-18 03:18:34][INFO] Checking Q11 — Submitted: [51] vs Correct: [51]
+[2025-06-18 03:18:34][INFO] User 2 passed quiz 10 in arcade mode
+[2025-06-18 03:18:38][INFO] Checking Q3 — Submitted: [9] vs Correct: [9,10,12]
+[2025-06-18 03:18:38][INFO] User 2 failed arcade on quiz 2 after score 16
+[2025-06-18 03:27:12][INFO] User 2 passed quiz 3 in arcade mode
+[2025-06-18 03:27:18][INFO] User 2 passed quiz 2 in arcade mode
+[2025-06-18 03:27:22][INFO] User 2 passed quiz 1 in arcade mode
+[2025-06-18 03:27:26][INFO] User 2 passed quiz 3 in arcade mode
+[2025-06-18 03:27:30][INFO] User 2 failed arcade on quiz 1 after score 4
+[2025-06-18 03:46:44][INFO] User 2 passed quiz 2 in arcade mode
+[2025-06-18 03:46:46][INFO] User 2 passed quiz 10 in arcade mode
+[2025-06-18 03:46:51][INFO] User 2 passed quiz 1 in arcade mode
+[2025-06-18 03:46:55][INFO] User 2 failed arcade on quiz 3 after score 3
+[2025-06-18 03:52:59][INFO] User 2 passed quiz 3 in arcade mode
+[2025-06-18 03:53:01][INFO] User 2 passed quiz 10 in arcade mode
+[2025-06-18 03:53:07][INFO] User 2 passed quiz 3 in arcade mode
+[2025-06-18 03:53:11][INFO] User 2 passed quiz 3 in arcade mode
+[2025-06-18 03:53:14][INFO] User 2 passed quiz 1 in arcade mode
+[2025-06-18 03:53:35][INFO] User 2 passed quiz 1 in arcade mode
+[2025-06-18 03:53:43][INFO] User 2 failed arcade on quiz 3 after score 6
+[2025-06-18 03:54:10][INFO] User 2 passed quiz 2 in arcade mode
+[2025-06-18 03:54:16][INFO] User 2 passed quiz 2 in arcade mode
+[2025-06-18 03:54:21][INFO] User 2 failed arcade on quiz 2 after score 2
+[2025-06-18 03:55:15][INFO] User 2 passed quiz 10 in arcade mode
+[2025-06-18 03:55:23][INFO] User 2 passed quiz 1 in arcade mode
+[2025-06-18 03:55:25][INFO] User 2 failed arcade on quiz 1 after score 2
+[2025-06-18 04:00:21][INFO] User 2 passed quiz 10 in arcade mode
+[2025-06-18 04:00:25][INFO] User 2 passed quiz 1 in arcade mode
+[2025-06-18 04:00:34][INFO] User 2 passed quiz 2 in arcade mode
+[2025-06-18 04:00:38][INFO] User 2 passed quiz 3 in arcade mode
+[2025-06-18 04:00:40][INFO] User 2 set new arcade record: 4
+[2025-06-18 04:00:40][INFO] User 2 failed arcade on quiz 3 after score 4
+[2025-06-18 04:01:20][INFO] User 2 started quiz ID 1
+[2025-06-18 04:01:24][INFO] User 2 started quiz ID 1
+[2025-06-18 04:02:06][INFO] User 2 started quiz ID 1
+[2025-06-18 04:02:10][INFO] User 2 started quiz ID 1
+[2025-06-18 04:02:52][INFO] User 2 started quiz ID 1
+[2025-06-18 04:03:00][INFO] User 2 started quiz ID 1
+[2025-06-18 04:03:26][INFO] User 2 started quiz ID 1
+[2025-06-18 04:03:31][INFO] User 2 started quiz ID 1

@@ -7,7 +7,7 @@ require_once '../../../includes/logger.php';
 
 if (!isset($_SESSION['user_id']) || !in_array($_SESSION['role'], ['admin', 'moderator']) || !isset($_GET['quiz_id'])) {
     $url = 'http://localhost:8000';
-    $url = $url . '/pages/login.php';
+    $url = $url . '/pages/accounts/login.php';
     echo "<script>window.location.href='$url';</script>";
     exit;
 }

@@ -3,9 +3,9 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 /** @var PDO $pdo */
-require_once '../config/db.php';
-require_once '../classes/User.php';
-require_once '../includes/logger.php';
+require_once '../../config/db.php';
+require_once '../../classes/User.php';
+require_once '../../includes/logger.php';
 $user = new User($pdo);
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -19,13 +19,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } else {
         $_SESSION['user_id'] = $result['id'];
         $_SESSION['role'] = $result['role'];
-        header('Location: ../index.php');
+        header('Location: ../../index.php');
         exit;
     }
 }
 ?>
 
-<?php include '../includes/header.php'; ?>
+<?php include '../../includes/header.php'; ?>
 
 <h2>Login</h2>
 
@@ -44,4 +44,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <a href="password_reset_request.php">Forgot your password?</a>
 </p>
 
-<?php include '../includes/footer.php'; ?>
+<?php include '../../includes/footer.php'; ?>

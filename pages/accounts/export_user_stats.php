@@ -1,6 +1,6 @@
 <?php
-require_once '../includes/session.php';
-require_once '../config/db.php';
+require_once '../../includes/session.php';
+require_once '../../config/db.php';
 
 /** @var PDO $pdo */
 if (!isset($_SESSION['user_id'])) {
