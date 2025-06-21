@@ -5,10 +5,6 @@ require_once '../../../config/db.php';
 require_once '../../../classes/Question.php';
 require_once '../../../classes/Answer.php';
 
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
-
 if (!isset($_SESSION['user_id']) || !in_array($_SESSION['role'], ['admin', 'moderator']) || !isset($_GET['question_id'])) {
     $url = 'http://localhost:8000';
     $url = $url . '/pages/accounts/login.php';

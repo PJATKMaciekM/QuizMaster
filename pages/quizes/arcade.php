@@ -6,9 +6,8 @@ require_once '../../classes/Answer.php';
 require_once '../../config/db.php';
 require_once '../../includes/logger.php';
 require_once '../../classes/User.php';
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
+require_once '../../includes/session.php';
+
 if (!isset($_SESSION['user_id'])) {
     header("Location: ../accounts/login.php");
     exit;

@@ -3,9 +3,8 @@
 /** @var PDO $pdo */
 require_once '../../config/db.php';
 require_once '../../classes/Quiz.php';
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
+require_once '../../includes/session.php';
+
 $message = "";
 if (!isset($_SESSION['user_id']) || !in_array($_SESSION['role'], ['admin', 'moderator'])) {
     header("Location: ../dashboard.php");

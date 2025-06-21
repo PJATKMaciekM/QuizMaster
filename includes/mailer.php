@@ -25,7 +25,7 @@ function sendVerificationEmail($toEmail, $token) {
 
         $mail->isHTML(true);
         $mail->Subject = 'Verify your email';
-        $verifyLink = $_ENV['BASE_URL'] . "/pages/verify_email.php?token=" . urlencode($token);
+        $verifyLink = $_ENV['BASE_URL'] . "/pages/accounts/verify_email.php?token=" . urlencode($token);
         $mail->Body    = "Click the link to verify your account: <a href='$verifyLink'>$verifyLink</a>";
 
         $mail->send();

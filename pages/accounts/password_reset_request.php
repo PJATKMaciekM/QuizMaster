@@ -1,8 +1,8 @@
 <?php
+/** @var PDO $pdo */
 require_once '../../config/db.php';
 require_once '../../includes/mailer.php';
 require_once '../../includes/logger.php';
-/** @var PDO $pdo */
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = $_POST['email'];

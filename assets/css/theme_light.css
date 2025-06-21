@@ -1,0 +1,21 @@
+body {
+    background-color: #ffffff;
+    color: #111111;
+}
+button, input, select {
+    background-color: #f4f4f4;
+    color: #000;
+    border: 1px solid #ccc;
+}
+
+.small-button {
+    width: auto !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 0.9rem !important;
+    background-color: transparent;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+}

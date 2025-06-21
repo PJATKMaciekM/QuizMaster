@@ -1,11 +1,11 @@
 <link rel="stylesheet" href="../../assets/css/style.css">
 
 <?php
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
 /** @var PDO $pdo */
-require_once '../../includes/init.php';
+require_once '../../classes/User.php';
+require_once '../../includes/session.php';
+require_once '../../config/db.php';
+
 $user = new User($pdo);
 $currentUser = $user->getUserById($_SESSION['user_id']);
 
@@ -30,6 +30,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['avatar'])) {
 </form>
 
 <?php if (!empty($currentUser['avatar'])): ?>
-    <img src="../assets/uploads/<?php echo $currentUser['avatar']; ?>" width="100">
+    <img src="../../assets/uploads/<?php echo $currentUser['avatar']; ?>" width="100">
 <?php endif; ?>
 <?php include '../../includes/footer.php'; ?>

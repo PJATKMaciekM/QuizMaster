@@ -1,9 +1,9 @@
 <?php
+/** @var PDO $pdo */
 require_once '../../includes/session.php';
 require_once '../../config/db.php';
 require_once '../../classes/User.php';
 
-/** @var PDO $pdo */
 $userObj = new User($pdo);
 
 if (!isset($_SESSION['user_id'])) {

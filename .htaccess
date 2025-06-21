@@ -1,0 +1,55 @@
+# --------------------------------------
+# Enable GZIP Compression
+# --------------------------------------
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml
+  AddOutputFilterByType DEFLATE text/css text/javascript application/javascript
+  AddOutputFilterByType DEFLATE application/json application/xml
+  AddOutputFilterByType DEFLATE font/ttf font/otf image/svg+xml
+</IfModule>
+
+# --------------------------------------
+# Set Caching for Static Resources
+# --------------------------------------
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault "access plus 1 month"
+
+  ExpiresByType text/css "access plus 30 days"
+  ExpiresByType application/javascript "access plus 30 days"
+  ExpiresByType image/jpeg "access plus 30 days"
+  ExpiresByType image/png "access plus 30 days"
+  ExpiresByType image/webp "access plus 30 days"
+  ExpiresByType image/gif "access plus 30 days"
+  ExpiresByType image/svg+xml "access plus 30 days"
+  ExpiresByType font/woff2 "access plus 30 days"
+</IfModule>
+
+# --------------------------------------
+# Force UTF-8 Encoding
+# --------------------------------------
+AddDefaultCharset UTF-8
+
+# --------------------------------------
+# MIME Type Fix (Prevents CSS as text/html)
+# --------------------------------------
+<IfModule mod_headers.c>
+  <FilesMatch "\.(css|js)$">
+    Header set X-Content-Type-Options "nosniff"
+  </FilesMatch>
+</IfModule>
+
+# --------------------------------------
+# Disable Directory Listing
+# --------------------------------------
+Options -Indexes
+
+# --------------------------------------
+# Fallback to index.php if no file found (for clean URLs)
+# --------------------------------------
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^ index.php [QSA,L]
+</IfModule>

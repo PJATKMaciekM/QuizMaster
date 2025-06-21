@@ -6,9 +6,6 @@ require_once '../../../classes/Question.php';
 require_once '../../../classes/Answer.php';
 require_once '../../../includes/logger.php';
 
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
 if (!isset($_SESSION['user_id']) || !isset($_GET['quiz_id']) || !in_array($_SESSION['role'], ['admin', 'moderator'])) {
     $url = 'http://localhost:8000';
     $url = $url . '/pages/dashboard.php';

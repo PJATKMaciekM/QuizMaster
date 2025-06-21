@@ -1,7 +1,5 @@
 <?php
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
+$theme = $_COOKIE['theme'] ?? 'dark';
 ob_start(); // <--- Enable output buffering
 ?>
 <!DOCTYPE html>
@@ -12,6 +10,7 @@ ob_start(); // <--- Enable output buffering
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preload" href="/assets/css/style.css" as="style">
     <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/theme_<?= $theme ?>.css">
 </head>
 <body>
 <?php include 'navbar.php'; ?>

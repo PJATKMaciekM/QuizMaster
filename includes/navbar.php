@@ -1,7 +1,5 @@
 <?php
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
+/** @var $theme */
 ?>
 <nav style="background-color: #1c1c1c; padding: 1rem; border-bottom: 1px solid #333;">
     <div style="max-width: 800px; margin: auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem;">
@@ -18,6 +16,12 @@ if (session_status() === PHP_SESSION_NONE) {
                 <a href="/pages/accounts/login.php">Login</a>
                 <a href="/pages/accounts/register.php">Register</a>
             <?php endif; ?>
+            <form method="POST" action="../../../toggle_theme.php" style="display:inline;">
+                <button type="submit" class="theme-toggle small-button">
+                    <?= ($theme === 'dark') ? '🌙' : '☀️' ?>
+                </button>
+            </form>
+
         </div>
     </div>
 </nav>

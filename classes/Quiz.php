@@ -26,12 +26,6 @@ class Quiz {
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function getQuizzesByDifficulty($difficulty) {
-        $stmt = $this->pdo->prepare("SELECT * FROM QUIZZES WHERE difficulty = ?");
-        $stmt->execute([$difficulty]);
-        return $stmt->fetchAll();
-    }
-
     public function getDistinctCategories() {
         $stmt = $this->pdo->query("SELECT DISTINCT category FROM QUIZZES");
         return $stmt->fetchAll();
