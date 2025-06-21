@@ -240,3 +240,32 @@
 [2025-06-21 22:35:30][WARNING] Admin deleted user ID 5
 [2025-06-21 22:36:43][INFO] User 6 started quiz ID 1
 [2025-06-21 22:36:48][INFO] User 6 started quiz ID 1
+[2025-06-21 23:49:49][INFO] User 1 added fill-blank question to quiz ID 4
+[2025-06-21 23:55:25][INFO] User 1 added fill-blank question to quiz ID 4
+[2025-06-22 00:31:37][INFO] User 1 added image quiz question to quiz ID 15
+[2025-06-22 00:34:09][INFO] User 1 added image quiz question to quiz ID 15
+[2025-06-22 00:35:17][INFO] User 1 added image quiz question to quiz ID 15
+[2025-06-22 00:36:46][INFO] User 1 added image quiz question to quiz ID 16
+[2025-06-22 00:37:18][INFO] User 1 added image quiz question to quiz ID 16
+[2025-06-22 00:38:03][INFO] User 1 added image quiz question to quiz ID 16
+[2025-06-22 00:39:38][INFO] User 1 added image quiz question to quiz ID 17
+[2025-06-22 00:40:25][INFO] User 1 added image quiz question to quiz ID 17
+[2025-06-22 00:41:26][INFO] User 1 added image quiz question to quiz ID 17
+[2025-06-22 00:42:48][INFO] User 1 added image quiz question to quiz ID 18
+[2025-06-22 00:43:30][INFO] User 1 added image quiz question to quiz ID 18
+[2025-06-22 00:44:25][INFO] User 1 added image quiz question to quiz ID 18
+[2025-06-22 00:45:29][INFO] User 1 added fill-blank question to quiz ID 19
+[2025-06-22 00:45:41][INFO] User 1 added fill-blank question to quiz ID 19
+[2025-06-22 00:46:35][INFO] User 1 added fill-blank question to quiz ID 20
+[2025-06-22 00:46:47][INFO] User 1 added fill-blank question to quiz ID 20
+[2025-06-22 00:47:54][INFO] User 1 added fill-blank question to quiz ID 21
+[2025-06-22 00:48:11][INFO] User 1 added fill-blank question to quiz ID 21
+[2025-06-22 00:48:55][INFO] User 1 added fill-blank question to quiz ID 22
+[2025-06-22 00:49:06][INFO] User 1 added fill-blank question to quiz ID 22
+[2025-06-22 00:50:43][WARNING] Invalid login attempt
+[2025-06-22 01:01:20][INFO] User 2 started quiz ID 1
+[2025-06-22 01:01:26][INFO] User 2 started quiz ID 1
+[2025-06-22 01:01:34][INFO] User 2 started quiz ID 1
+[2025-06-22 01:01:44][INFO] User 2 started quiz ID 2
+[2025-06-22 01:01:53][INFO] User 2 started quiz ID 2
+[2025-06-22 01:02:39][INFO] User 2 completed fill-blank quiz 19 with score 2/2

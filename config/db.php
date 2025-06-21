@@ -3,7 +3,7 @@
 require_once __DIR__ . '/../vendor/autoload.php';
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../.idea/');
 $dotenv->load();
-$host = 'localhost:3306';
+$host = 'localhost:3312';
 $db = 'quizmaster';
 $user = 'root';
 $pass = $_ENV['DB_PASS'];

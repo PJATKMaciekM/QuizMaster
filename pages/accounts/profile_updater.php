@@ -12,7 +12,7 @@ $currentUser = $user->getUserById($_SESSION['user_id']);
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['avatar'])) {
     $fileTmp = $_FILES['avatar']['tmp_name'];
     $fileName = $_FILES['avatar']['name'];
-    $fileDest = "../assets/uploads/" . basename($fileName);
+    $fileDest = "../../assets/uploads/" . basename($fileName);
     move_uploaded_file($fileTmp, $fileDest);
 
     $bio = $_POST['bio'] ?? '';

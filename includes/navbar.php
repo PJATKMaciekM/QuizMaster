@@ -1,5 +1,8 @@
 <?php
 /** @var $theme */
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 ?>
 <nav style="background-color: #1c1c1c; padding: 1rem; border-bottom: 1px solid #333;">
     <div style="max-width: 800px; margin: auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem;">

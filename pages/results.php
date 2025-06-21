@@ -1,5 +1,4 @@
 <link rel="stylesheet" href="../assets/css/style.css">
-<?php include '../includes/header.php'; ?>
 <?php
 require_once '../includes/init.php';
 /** @var PDO $pdo */
@@ -60,4 +59,3 @@ include '../includes/header.php';
 <?php endforeach; ?>
 
 <p><a href="../index.php">🔙 Back to main page</a></p>
-<?php include '../includes/footer.php'; ?>
